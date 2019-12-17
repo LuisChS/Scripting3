@@ -25,7 +25,8 @@ public class VerySimplePistol : MonoBehaviour
         { 
 			m_canShot = true;
         }
-	}
+        Debug.DrawRay(m_raycastSpot.position, m_raycastSpot.forward, Color.red);
+    }
 
 	private void OnGUI()
 	{
@@ -40,7 +41,7 @@ public class VerySimplePistol : MonoBehaviour
 		m_canShot = false;
 
 		Ray ray = new Ray(m_raycastSpot.position, m_raycastSpot.forward);
-
+        
         RaycastHit hit;
 
 		if (Physics.Raycast(ray, out hit, m_weaponRange))
@@ -48,6 +49,7 @@ public class VerySimplePistol : MonoBehaviour
             Debug.Log("Hit " + hit.transform.name);
             if (hit.rigidbody)
 			{
+                //Si es enemigo hacer daño
 				hit.rigidbody.AddForce(ray.direction * m_forceToApply);
                 Debug.Log("Hit");
 			}
