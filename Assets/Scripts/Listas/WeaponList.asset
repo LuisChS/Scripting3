@@ -13,12 +13,4 @@ MonoBehaviour:
   m_Name: WeaponList
   m_EditorClassIdentifier: 
   weaponList:
-  - {fileID: 11400000, guid: 31115a808f178d449a4945f84dc6b780, type: 2}
-  - {fileID: 11400000, guid: 31115a808f178d449a4945f84dc6b780, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
