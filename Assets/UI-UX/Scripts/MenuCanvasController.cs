@@ -8,11 +8,14 @@ public class MenuCanvasController : MonoBehaviour
 {
     public GameObject m_mainMenu;
     public GameObject m_options;
+    public GameObject m_exit;
 
 
     public void OnOnePlayer()
     {
-        SceneManager.LoadScene(AppScenes.LOADING_SCENE);
+        //SceneManager.LoadScene(AppScenes.LOADING_SCENE);
+        SceneManager.LoadScene("SampleScene");
+        Debug.Log("Play");
     }
 
     public void OnOptions(bool isOptions)
@@ -27,5 +30,7 @@ public class MenuCanvasController : MonoBehaviour
     public void OnExit()
     {
         Application.Quit();
+        Debug.Log("Cerrar juego");
+
     }
 }
