@@ -18,11 +18,26 @@ public class VerySimplePistol : MonoBehaviour
 
     [SerializeField]
     private WeaponItem data;
+    public WeaponList dataBorrar;
+    public string id;
 
     private void Start()
     {
         m_currentAmmo = data.m_ammoCapacity;
     }
+
+    private void OnEnable()
+    {
+        for (int i = 0; i < dataBorrar.weaponList.Count; i++)
+        {
+            if (dataBorrar.weaponList[i].name.Equals(id))
+            {
+                data = dataBorrar.weaponList[i];
+            }
+        }
+        m_currentAmmo = data.m_ammoCapacity;
+    }
+
     private void Update()
 	{
         ammoDisplay.text    = m_currentAmmo.ToString();

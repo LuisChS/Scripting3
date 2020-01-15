@@ -1641,6 +1641,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 31115a808f178d449a4945f84dc6b780,
         type: 2}
+    - target: {fileID: 355893660618651163, guid: dcf5d311f3561064389a2ffcded8715f,
+        type: 3}
+      propertyPath: dataBorrar
+      value: 
+      objectReference: {fileID: 11400000, guid: fc5afdf7b3919b04bb80e60e8896fee2,
+        type: 2}
+    - target: {fileID: 355893660618651163, guid: dcf5d311f3561064389a2ffcded8715f,
+        type: 3}
+      propertyPath: id
+      value: Pistola
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcf5d311f3561064389a2ffcded8715f, type: 3}
 --- !u!1001 &2663559890037181256

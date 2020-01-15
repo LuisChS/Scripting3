@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName ="New Weapon Info", menuName = "Weapon Info", order =51)]
+
+[System.Serializable]
 public class WeaponItem : ScriptableObject
 {
     public string m_name;
