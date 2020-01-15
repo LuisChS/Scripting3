@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     private float m_levelNoise = 0;
     private float m_levelVision = 0;
     public float m_playerHP = 100;
+    private float m_stormDamage;
+    private bool m_outOfStorm;
     public float GetLevelNoise()
     {
         return m_levelNoise;
@@ -26,7 +28,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        stormDamage();
+    }
+    public void playerOutStorm(float damage)
+    {
+        m_stormDamage = damage;
+        m_outOfStorm = true;
+    }
+    public void playerInStorm()
+    {
+        m_outOfStorm = false;
+    }
+    private void stormDamage()
+    {
+        if (m_outOfStorm)
+        {
+            m_playerHP -= m_stormDamage * Time.deltaTime;
+        }
     }
     //Nivel de sonido
     void Idle()
