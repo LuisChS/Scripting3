@@ -128,11 +128,21 @@ public class WeaponEditor : EditorWindow
         GUILayout.Space(10);
         inventoryItemList.weaponList[viewIndex - 1].m_name = EditorGUILayout.TextField("Name", inventoryItemList.weaponList[viewIndex-1].m_name);
         inventoryItemList.weaponList[viewIndex - 1].m_damage = EditorGUILayout.FloatField("Damage", inventoryItemList.weaponList[viewIndex - 1].m_damage);
-        
+        inventoryItemList.weaponList[viewIndex - 1].m_forceToApply = EditorGUILayout.FloatField("Force to Apply", inventoryItemList.weaponList[viewIndex - 1].m_forceToApply);
+        inventoryItemList.weaponList[viewIndex - 1].m_weaponRange = EditorGUILayout.FloatField("Range", inventoryItemList.weaponList[viewIndex - 1].m_weaponRange);
+        inventoryItemList.weaponList[viewIndex - 1].m_ammoCapacity = EditorGUILayout.IntField("Ammo Capacity", inventoryItemList.weaponList[viewIndex - 1].m_ammoCapacity);
+        inventoryItemList.weaponList[viewIndex - 1].m_rateOfShot = EditorGUILayout.FloatField("Rate of Shot", inventoryItemList.weaponList[viewIndex - 1].m_rateOfShot);
+        inventoryItemList.weaponList[viewIndex - 1].m_accuary = EditorGUILayout.FloatField("Accuracy", inventoryItemList.weaponList[viewIndex - 1].m_accuary);
+        inventoryItemList.weaponList[viewIndex - 1].m_accuaryDropPerShot = EditorGUILayout.FloatField("Accuracy Drop", inventoryItemList.weaponList[viewIndex - 1].m_accuaryDropPerShot);
+        inventoryItemList.weaponList[viewIndex - 1].m_accuaryRecovery = EditorGUILayout.FloatField("Accuracy Recovery", inventoryItemList.weaponList[viewIndex - 1].m_accuaryRecovery);
+        inventoryItemList.weaponList[viewIndex - 1].m_simultaneousShots = EditorGUILayout.IntField("Simultaneous Shot", inventoryItemList.weaponList[viewIndex - 1].m_simultaneousShots);
+        inventoryItemList.weaponList[viewIndex - 1].m_recoilBack = EditorGUILayout.FloatField("Recoil", inventoryItemList.weaponList[viewIndex - 1].m_recoilBack);
+        inventoryItemList.weaponList[viewIndex - 1].m_recoilRecovery = EditorGUILayout.FloatField("Recoil Recovery", inventoryItemList.weaponList[viewIndex - 1].m_recoilRecovery);
 
-        GUILayout.Label("Icon");
-        inventoryItemList.weaponList[viewIndex - 1].m_isAMachineGun = (bool)EditorGUILayout.Toggle("m_isAMachineGun", inventoryItemList.weaponList[viewIndex - 1].m_isAMachineGun, GUILayout.ExpandWidth(false));
 
+        GUILayout.Label("Type");
+        inventoryItemList.weaponList[viewIndex - 1].m_isAMachineGun = (bool)EditorGUILayout.Toggle("Machine Gun", inventoryItemList.weaponList[viewIndex - 1].m_isAMachineGun, GUILayout.ExpandWidth(false));
+        inventoryItemList.weaponList[viewIndex - 1].m_isARocketLauncher = (bool)EditorGUILayout.Toggle("Rocket Launcher", inventoryItemList.weaponList[viewIndex - 1].m_isARocketLauncher, GUILayout.ExpandWidth(false));
         if (inventoryItemList.weaponList[viewIndex - 1].m_isAMachineGun)
         {
             inventoryItemList.weaponList[viewIndex - 1].m_name = EditorGUILayout.TextField("Name", inventoryItemList.weaponList[viewIndex - 1].m_name);
