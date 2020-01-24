@@ -18,8 +18,8 @@ public class AppPaths
 public class AppScenes
 {
 	public static readonly string 	MAIN_SCENE    = "Menu";
-	public static readonly string 	LOADING_SCENE = "Loading";
-	public static readonly string 	GAME_SCENE    = "Game";
+	public static readonly string 	LOADING_SCENE = "LoadingScene";
+	public static readonly string 	GAME_SCENE    = "SampleScene";
 }
 
 public class AppPlayerPrefKeys

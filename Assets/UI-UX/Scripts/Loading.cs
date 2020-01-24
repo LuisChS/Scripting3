@@ -8,10 +8,11 @@ public class Loading : MonoBehaviour
 	 // Use this for initialization
 	void OnEnable ()
     {
-	    StartCoroutine(delay());
-	}
+	    StartCoroutine(Delay());
+        Debug.Log("Loading");
+    }
 
-	IEnumerator delay ()
+	IEnumerator Delay ()
     {
         yield return new WaitForEndOfFrame();
         SceneManager.LoadSceneAsync(AppScenes.GAME_SCENE, LoadSceneMode.Additive);
