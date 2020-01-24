@@ -24,7 +24,6 @@ public class Storm : MonoBehaviour
     }
     void StormBehaviour()
     {
-        Debug.Log(m_timer);
         if (m_timer <= 0)
         {
 
