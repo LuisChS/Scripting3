@@ -29,7 +29,7 @@ public class VerySimplePistol : MonoBehaviour
     {
         for (int i = 0; i < dataBorrar.weaponList.Count; i++)
         {
-            if (dataBorrar.weaponList[i].name.Equals(Name))
+            if (dataBorrar.weaponList[i].m_name.Equals(Name))
             {
                 data = dataBorrar.weaponList[i];
             }
@@ -79,7 +79,7 @@ public class VerySimplePistol : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                GetComponent<AudioSource>().PlayOneShot(data.m_reloadSound);
+                // SOUND GetComponent<AudioSource>().PlayOneShot(data.m_reloadSound);
                 m_currentAmmo = data.m_ammoCapacity;
             }
         }
@@ -125,8 +125,8 @@ public class VerySimplePistol : MonoBehaviour
                 }
             }
         }
-		GetComponent<AudioSource>().PlayOneShot(data.m_fireSound);
-	}
+        // SOUND GetComponent<AudioSource>().PlayOneShot(data.m_fireSound);
+    }
 
     private void ShotRocket()
     {
@@ -147,6 +147,6 @@ public class VerySimplePistol : MonoBehaviour
             GameObject Rocket = Instantiate(m_rocket, m_rocketSpot.position, rotation) as GameObject;
         }
         m_weapon.transform.Translate(new Vector3(0,0,data.m_recoilBack), Space.Self);
-        GetComponent<AudioSource>().PlayOneShot(data.m_fireSound);
+        // SOUND GetComponent<AudioSource>().PlayOneShot(data.m_fireSound);
     }
 }

@@ -16,6 +16,7 @@ public class MenuCanvasController : MonoBehaviour
     public void OnOnePlayer()
     {
         SceneManager.LoadScene(AppScenes.LOADING_SCENE);
+        MusicManager.Instance.PlaySound("Button");
         //Debug.Log("Play");
     }
 

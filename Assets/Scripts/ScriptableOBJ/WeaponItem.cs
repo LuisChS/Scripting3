@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class WeaponItem : ScriptableObject
+public class WeaponItem 
 {
     public string m_name;
     public float m_damage = 80.0f;
@@ -21,9 +21,9 @@ public class WeaponItem : ScriptableObject
     public float m_recoilRecovery = 0.01f;
     public bool m_isAMachineGun = false;
     public bool m_isARocketLauncher = false;
-    public GameObject m_rocket;
-    public Texture2D m_crosshairTexture;
-    public AudioClip m_fireSound;
-    public AudioClip m_reloadSound;
+    //public GameObject m_rocket;
+    //public Texture2D m_crosshairTexture;
+    //public AudioClip m_fireSound;
+    //public AudioClip m_reloadSound;
 
 }
