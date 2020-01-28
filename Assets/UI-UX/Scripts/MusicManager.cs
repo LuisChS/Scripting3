@@ -80,7 +80,7 @@ public class MusicManager : PersistentSingleton<MusicManager>
         m_backgroundMusic = CreateAudioSource("Music", true);
         m_sfxMusic        = CreateAudioSource("Sfx",   false);
 
-        MusicVolume        = PlayerPrefs.GetFloat(AppPlayerPrefKeys.MUSIC_VOLUME, 0.5f);
+        MusicVolume        = PlayerPrefs.GetFloat(AppPlayerPrefKeys.MUSIC_VOLUME, 0.1f);
         SfxVolume          = PlayerPrefs.GetFloat(AppPlayerPrefKeys.SFX_VOLUME  , 0.5f);
 
         AudioClip[] audioSfxVector   = Resources.LoadAll<AudioClip>(AppPaths.PATH_RESOURCE_SFX);
