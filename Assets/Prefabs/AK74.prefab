@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 4519716788627816}
   - component: {fileID: 33705837635148522}
   - component: {fileID: 23860282398207496}
+  - component: {fileID: -7453373595932474422}
   m_Layer: 0
   m_Name: AK74
   m_TagString: Untagged
@@ -234,6 +235,44 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-7453373595932474422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487774384131766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4797894bb692c944837d7b3420464f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Ak
+  m_raycastSpot: {fileID: 0}
+  m_crosshairTexture: {fileID: 0}
+  ammoDisplay: {fileID: 0}
+  maxAmmoDisplay: {fileID: 0}
+  m_fireSound: {fileID: 0}
+  m_reloadSound: {fileID: 0}
+  m_rocket: {fileID: 0}
+  m_rocketSpot: {fileID: 0}
+  m_weapon: {fileID: 0}
+  data:
+    m_name: 
+    m_damage: 80
+    m_forceToApply: 1000
+    m_weaponRange: 999
+    m_ammoCapacity: 10
+    m_rateOfShot: 0.5
+    m_accuary: 70
+    m_accuaryDropPerShot: 10
+    m_accuaryRecovery: 1
+    m_simultaneousShots: 1
+    m_recoilBack: 0.1
+    m_recoilRecovery: 0.01
+    m_isAMachineGun: 0
+    m_isARocketLauncher: 0
+  dataBorrar: {fileID: 0}
 --- !u!1 &1927369336514790
 GameObject:
   m_ObjectHideFlags: 0

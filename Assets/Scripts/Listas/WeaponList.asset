@@ -13,4 +13,59 @@ MonoBehaviour:
   m_Name: WeaponList
   m_EditorClassIdentifier: 
   weaponList:
-  - {fileID: 11400000, guid: 31115a808f178d449a4945f84dc6b780, type: 2}
+  - m_name: Pistol
+    m_damage: 80
+    m_forceToApply: 1000
+    m_weaponRange: 999
+    m_ammoCapacity: 20
+    m_rateOfShot: 0.5
+    m_accuary: 70
+    m_accuaryDropPerShot: 10
+    m_accuaryRecovery: 1
+    m_simultaneousShots: 1
+    m_recoilBack: 0.1
+    m_recoilRecovery: 15
+    m_isAMachineGun: 0
+    m_isARocketLauncher: 0
+  - m_name: Escopeta
+    m_damage: 200
+    m_forceToApply: 1000
+    m_weaponRange: 150
+    m_ammoCapacity: 6
+    m_rateOfShot: 1.2
+    m_accuary: 70
+    m_accuaryDropPerShot: 10
+    m_accuaryRecovery: 1
+    m_simultaneousShots: 5
+    m_recoilBack: 0.3
+    m_recoilRecovery: 5
+    m_isAMachineGun: 0
+    m_isARocketLauncher: 0
+  - m_name: Ak
+    m_damage: 80
+    m_forceToApply: 1000
+    m_weaponRange: 999
+    m_ammoCapacity: 30
+    m_rateOfShot: 0.2
+    m_accuary: 70
+    m_accuaryDropPerShot: 10
+    m_accuaryRecovery: 1
+    m_simultaneousShots: 1
+    m_recoilBack: 0.15
+    m_recoilRecovery: 15
+    m_isAMachineGun: 1
+    m_isARocketLauncher: 0
+  - m_name: LanzaCohetes
+    m_damage: 300
+    m_forceToApply: 1000
+    m_weaponRange: 999
+    m_ammoCapacity: 1
+    m_rateOfShot: 2
+    m_accuary: 70
+    m_accuaryDropPerShot: 10
+    m_accuaryRecovery: 1
+    m_simultaneousShots: 1
+    m_recoilBack: 0.3
+    m_recoilRecovery: 5
+    m_isAMachineGun: 0
+    m_isARocketLauncher: 1

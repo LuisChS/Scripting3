@@ -10,6 +10,11 @@ public class Player : MonoBehaviour
     public float m_playerHP = 100;
     private float m_stormDamage;
     private bool m_outOfStorm;
+
+    public GameObject Pistol;
+    public GameObject Escopeta;
+    public GameObject AK;
+    public GameObject RL;
     public float GetLevelNoise()
     {
         return m_levelNoise;
@@ -33,6 +38,34 @@ public class Player : MonoBehaviour
         if (m_playerHP <= 0)
         {
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Pistol.SetActive(true);
+            Escopeta.SetActive(false);
+            AK.SetActive(false);
+            RL.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Pistol.SetActive(false);
+            Escopeta.SetActive(true);
+            AK.SetActive(false);
+            RL.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Pistol.SetActive(false);
+            Escopeta.SetActive(false);
+            AK.SetActive(true);
+            RL.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Pistol.SetActive(false);
+            Escopeta.SetActive(false);
+            AK.SetActive(false);
+            RL.SetActive(true);
         }
     }
     public void playerOutStorm(float damage)

@@ -67,14 +67,12 @@ public class Idle : StateMachineBehaviour
         {
             if (Vector3.Distance(animator.transform.position, m_playerTransform.position) > seeingDistance)
             {
-                Debug.Log("Me ha visto");
                 animator.SetTrigger("Chase");
             }
         }
         if (Physics.Linecast(animator.transform.position, m_playerTransform.position))
         {
             Debug.DrawRay(animator.transform.position, m_playerTransform.position);
-            Debug.Log("No veo");
             inSight = false;
         }
         else

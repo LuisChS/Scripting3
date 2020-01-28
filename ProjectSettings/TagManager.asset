@@ -7,6 +7,11 @@ TagManager:
   - Enemy
   - ActivateTrigger
   - Fire
+  - Waypoint
+  - Pistola
+  - Escopeta
+  - AK
+  - RocketLauncher
   layers:
   - Default
   - TransparentFX

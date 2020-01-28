@@ -13,6 +13,8 @@ public class VerySimplePistol : MonoBehaviour
     public Text ammoDisplay;
     public Text maxAmmoDisplay;
     private float     m_timer         = 1;
+    public AudioClip m_fireSound;
+    public AudioClip m_reloadSound;
 
     //ROCKET
     public GameObject m_rocket;
@@ -29,7 +31,7 @@ public class VerySimplePistol : MonoBehaviour
     {
         for (int i = 0; i < dataBorrar.weaponList.Count; i++)
         {
-            if (dataBorrar.weaponList[i].name.Equals(Name))
+            if (dataBorrar.weaponList[i].m_name.Equals(Name))
             {
                 data = dataBorrar.weaponList[i];
             }
@@ -53,7 +55,7 @@ public class VerySimplePistol : MonoBehaviour
         m_accuracy = Mathf.Lerp(data.m_accuary, m_accuracy, data.m_recoilRecovery * Time.deltaTime);
         Debug.DrawRay(m_raycastSpot.position, m_raycastSpot.forward, Color.red);
         //RECOIL RECOVERY
-        m_weapon.transform.position = Vector3.Lerp(m_weapon.transform.position,this.transform.position, data.m_recoilRecovery * Time.deltaTime);
+        this.transform.position = Vector3.Lerp(this.transform.position,m_weapon.transform.position, data.m_recoilRecovery * Time.deltaTime);
         //Disparar
         if (m_canShot && m_currentAmmo > 0 && m_timer > data.m_rateOfShot)
 		{
@@ -79,7 +81,7 @@ public class VerySimplePistol : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                GetComponent<AudioSource>().PlayOneShot(data.m_reloadSound);
+                GetComponent<AudioSource>().PlayOneShot(m_reloadSound);
                 m_currentAmmo = data.m_ammoCapacity;
             }
         }
@@ -100,7 +102,6 @@ public class VerySimplePistol : MonoBehaviour
         m_timer = 0;
         for (int i = 0; i < data.m_simultaneousShots; i++)
         {
-            Debug.Log("DISPARO");
             float accuaryModifier = (100 - data.m_accuary) / 1000;
             Vector3 directionForward = m_raycastSpot.forward;
             directionForward.x += UnityEngine.Random.Range(-accuaryModifier, accuaryModifier);
@@ -109,15 +110,14 @@ public class VerySimplePistol : MonoBehaviour
             m_accuracy -= data.m_accuaryDropPerShot;
             m_accuracy = Mathf.Clamp(data.m_accuary, 0, 100);
 
-            m_weapon.transform.Translate(new Vector3(0, 0, data.m_recoilBack), Space.Self);
+            this.transform.Translate(new Vector3(0, 0, data.m_recoilBack), Space.Self);
 
             Ray ray = new Ray(m_raycastSpot.position, directionForward);
 
             RaycastHit hit;
-
+            GetComponent<AudioSource>().PlayOneShot(m_fireSound);
             if (Physics.Raycast(ray, out hit, data.m_weaponRange))
             {
-                Debug.Log("Hit " + hit.transform.name);
                 if (hit.collider.tag == "Enemy")
                 {
                     //Si es enemigo hacer daño
@@ -125,7 +125,6 @@ public class VerySimplePistol : MonoBehaviour
                 }
             }
         }
-		GetComponent<AudioSource>().PlayOneShot(data.m_fireSound);
 	}
 
     private void ShotRocket()
@@ -142,11 +141,8 @@ public class VerySimplePistol : MonoBehaviour
 
         Quaternion rotation = Quaternion.Euler(0,0,0);
 
-        for (int i = 0; i < data.m_simultaneousShots; i++)
-        {
-            GameObject Rocket = Instantiate(m_rocket, m_rocketSpot.position, rotation) as GameObject;
-        }
-        m_weapon.transform.Translate(new Vector3(0,0,data.m_recoilBack), Space.Self);
-        GetComponent<AudioSource>().PlayOneShot(data.m_fireSound);
+            GameObject Rocket = Instantiate(m_rocket, m_rocketSpot.position, m_rocketSpot.rotation) as GameObject;
+        this.transform.Translate(new Vector3(0,0,data.m_recoilBack), Space.Self);
+        GetComponent<AudioSource>().PlayOneShot(m_fireSound);
     }
 }
