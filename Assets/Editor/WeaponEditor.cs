@@ -25,7 +25,7 @@ public class WeaponEditor : EditorWindow
             viewIndex = 1;
 
             WeaponList asset = ScriptableObject.CreateInstance<WeaponList>();
-            AssetDatabase.CreateAsset(asset, "Assets/Scripts/WeaponList.asset");
+            AssetDatabase.CreateAsset(asset, "Assets/Scripts/Listas/WeaponList.asset");
             AssetDatabase.SaveAssets();
 
             inventoryItemList = asset;

@@ -22,6 +22,6 @@ public class Loading : MonoBehaviour
 	void FinishLoading (Scene scene, LoadSceneMode mode)
     {
         SceneManager.sceneLoaded -= FinishLoading;
-        Destroy(this.gameObject);
+        Destroy(this.gameObject,2);
 	}
 }

@@ -1,4 +1,4 @@
-﻿    using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,27 +12,41 @@ public class MenuCanvasController : MonoBehaviour
     public Slider m_musicSlider;
     public Slider m_sfxSlider;
 
+    private void Start()
+    {
+        MusicManager.Instance.PlayBackgroundMusic(AppSounds.MAIN_TITLE_MUSIC);
+    }
+
 
     public void OnOnePlayer()
     {
+        MusicManager.Instance.PlaySound(AppSounds.BUTTON_SFX);
+        MusicManager.Instance.StopBackgroundMusic();
         SceneManager.LoadScene(AppScenes.LOADING_SCENE);
-        //Debug.Log("Play");
+
     }
 
     public void OnOptions(bool isOptions)
     {
         //Desactivar popup de menu principal
         m_mainMenu.SetActive(!isOptions);
+        {
+            MusicManager.Instance.PlaySound(AppSounds.BUTTON_SFX);
+        }
 
         //Activar popup de opciones
         m_options.SetActive(isOptions);
-    }
+        {
+            MusicManager.Instance.PlaySound(AppSounds.BUTTON_SFX);
+        }
 
-    public void OnExit()
-    {
-        Application.Quit();
-        //Debug.Log("Cerrar juego");
 
+        if (!isOptions)
+        {
+            MusicManager.Instance.MusicVolumeSave = m_musicSlider.value;
+            MusicManager.Instance.SfxVolumeSave = m_sfxSlider.value;
+
+        }
     }
 
     public void OnMusicValueChanged()
@@ -42,7 +56,17 @@ public class MenuCanvasController : MonoBehaviour
 
     public void OnSfxValueChanged()
     {
-        MusicManager.Instance.MusicVolume = m_sfxSlider.value;
+        MusicManager.Instance.SfxVolume = m_sfxSlider.value;
     }
+
+
+
+    public void OnExit()
+    {
+        Application.Quit();
+        MusicManager.Instance.PlaySound(AppSounds.BUTTON_SFX);
+    }
+
+    
 }
 
